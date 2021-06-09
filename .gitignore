@@ -6,6 +6,7 @@ yarn.lock
 
 # Build directory
 /public
+/content
 .DS_Store
 
 # Environment variables
