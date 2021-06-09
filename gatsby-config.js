@@ -5,7 +5,7 @@ module.exports = {
     title: "Bala Chen",
     formspreeEndpoint: "https://formspree.io/f/{your-id}",
   },
-  pathPrefix: '/Balalachen.github.io',
+  pathPrefix: '',
   plugins: [
     {
       resolve: "@wkocjan/gatsby-theme-intro",
