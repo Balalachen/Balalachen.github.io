@@ -1,0 +1,47 @@
+- company: Awespire
+  department:
+  position: Technical Director
+  totime: present
+  fromtime: 2018/12
+  url: http://awespire.tech/
+  label: all
+  selection: true
+  
+- company: National Taiwan University
+  department: Graduate Institute of Networking and Multimedia
+  position: Ph.D Student
+  totime: present
+  fromtime: 2016/06
+  url: http://www.ntuimlab.tw/
+  label: all
+  selection: true
+
+- company: Tainan National University
+  department: History of the Arts
+  position: Lecturer
+  totime: 2020/12
+  fromtime: 2017/06
+  url: https://arthistory.tnnua.edu.tw/
+  label: all
+  selection: true
+  notes:
+    - "2020 Spring, 虛擬實境"
+    - "2019 Fall, 虛擬實境 (進階)"
+
+- company: Raise Digit
+  department:
+  position: Technical Director
+  totime: 2018/12
+  fromtime: 2016/01
+  url: http://awespire.tech/
+  label: all
+  selection: false
+
+- company: National Taiwan University
+  department: Graduate Institute of Networking and Multimedia
+  position: Master
+  totime: 2014/06
+  fromtime: 2012/09
+  url: http://www.ntuimlab.tw/
+  label: all
+  selection: false

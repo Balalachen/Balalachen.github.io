@@ -1,0 +1,26 @@
+- title: "Haptic around: multiple tactile sensations for immersive environment and interaction in virtual reality"
+  authors: "Ping-Hsuan Han, Yang-Sheng Chen, Kong-Chang Lee, Hao-Cheng Wang, Chiao-En Hsieh, Jui-Chun Hsiao, Chien-Hsing Chou, Yi-Ping Hung"
+  proceedings: "VRST 18'"
+  published: "28 November 2018"
+  selection: true
+  award:
+  dwlink:
+  videolink: 
+
+- title: "Soes: Attachable augmented haptic on gaming controller for immersive interaction"
+  authors: "Yang-Sheng Chen, Ping-Hsuan Han, Jui-Chun Hsiao, Kong-Chang Lee, Chiao-En Hsieh, Kuan-Yin Lu, Chien-Hsing Chou, Yi-Ping Hung"
+  proceedings: "UIST 16'"
+  published: "16 October 2016"
+  selection: true
+  award: Best Demo Award
+  dwlink: "https://dl.acm.org/doi/10.1145/2984751.2985707"
+  videolink: "https://www.youtube.com/watch?v=ZxHDj1r48Rs"
+
+- title: "OoEs: playing in the immersive game with augmented haptics"
+  authors: "Ping-Hsuan Han, Yang-Sheng Chen, Chiao-En Hsieh, Yu-Jie Huang, Hung-Chih Lin, Peng-Wen Tong, Kuan-Yin Lu, Yi-Ping Hung"
+  proceedings: "ACM SIGGRAPH 2016 VR Village"
+  published: "2016"
+  selection: false
+  award: 
+  dwlink: "https://dl.acm.org/doi/10.1145/2929490.2929895"
+  videolink: "https://www.youtube.com/watch?v=lZTV79EoauA"

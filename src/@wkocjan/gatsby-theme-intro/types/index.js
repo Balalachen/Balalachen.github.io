@@ -1,0 +1,6 @@
+export { arrayOf, shape, string } from "prop-types"
+export { ProfileType } from "./profile"
+export { ProjectModType } from "./projectMod"
+export { SocialType } from "./social"
+export { PublicationType } from "./publication"
+export { WorkHistoryModType } from "./work-historyMod"

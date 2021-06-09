@@ -1,0 +1,29 @@
+- profile:
+  initials: BA
+  name: "Bala Chen"
+  fullname: "Yang-Sheng Chen"
+  profession: Technical Art
+  image: images/head.jpg
+  location: Taipai, Taiwan
+  relocation: true
+  company: Awespire
+  for_hire: false
+  focus: VR Developement
+  focus_url: https://balalachen.github.io/
+  about: |
+    Somehow, this is a testing page for github.io
+
+    I will try something here XD.
+  skills:
+    - OpenGL Shading Language
+    - C#
+    - C++
+  tools:
+    - Unity
+    - VSCode
+    - 3Ds Max
+  budget:
+    currency: $
+    min: 5
+    max: 30
+    default: 10

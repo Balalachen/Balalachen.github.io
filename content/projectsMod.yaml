@@ -1,0 +1,44 @@
+- name: "印象太陽"
+  description: "本計畫與國家圖書館合作，以知名散文作家林良的經典文學作品「小太陽」為故事題材，製作之虛擬實境作品。使用者可以隨著文字的帶領自然地轉動其視角觀看故事動畫，並運用手繪風格的繪畫美術風格呈現手法，轉譯出林良文章中溫暖動人的內涵。"
+  selection: true
+  status: Published
+  position: Technical Director
+  tags:
+    - Unity SRP
+    - CSharp
+    - CurveWord
+    - Guidance
+    - Timeline
+  image: images/littlesun.png
+  icon:
+    - youtube
+    - website
+  url:
+    - "https://www.youtube.com/watch?v=CRdhppLBLKw"
+    - "https://www.ncl.edu.tw/information_237_10863.html"
+  awards:
+    - "[a] 2020 XR創新金典大賞 最佳XR文化藝術應用"
+    - "2020 Laval Virtual Revolution Student Competition"
+  exhibitions:
+    - "2020 台北資訊月主題館"
+    - "2019 閱讀嘉年華"
+    - "2019 科普論壇 -「邁向智慧世代-科技Fun新玩」"
+    - "2019 新竹實驗中學 教學展示"
+- name: "神遊敦煌-莫高窟第61窟"
+  description: "敦煌石窟是一座已有1600年歷史的藝術寶庫。為了保護且延長敦煌石窟的壽命，現今石窟的開放時間是有限制的，有些重點石窟甚至不會開放給一般民眾參觀。為了讓更多人能夠有機會欣賞敦煌石窟之美，臺大與中研院的研究團隊結合敦煌研究院的研究人員，共同展開VR內容研製計畫。此VR作品除了讓大家能以虛擬逼真的方式探索莫高窟第61窟，也透過數位復原技術去重建那些受損的壁畫與塑像，讓大家得以使用「復原探照燈」去觀賞那些重建後栩栩如生的壁畫與塑像。例如，莫高窟第61窟之中，中央壇上目前已毀損不復存在的文殊菩薩塑像群，即可透過數位復原技術重現於虛擬石窟中。此外，在探索虛擬石窟時，亦可啟動西壁的〈五台山圖〉壁畫與北壁的〈華嚴經變〉壁畫之動畫解說，以深入瞭解壁畫背後的故事。"
+  selection: false
+  status: live
+  position: Technical Consultant
+  tags:
+    - Unity SRP
+    - CSharp
+    - HLSL
+  image: 
+  icon:
+    - steam
+    - youtube
+    - website
+  url:
+    - "https://store.steampowered.com/app/947240/61/?l=tchinese"
+    - "https://www.youtube.com/watch?v=xTZzsbO447I"
+    - "http://www.ntuimlab.tw/dunhuang/"
