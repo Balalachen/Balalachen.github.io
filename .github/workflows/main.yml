@@ -19,7 +19,7 @@ jobs:
       - name: download yaml
         uses: wei/curl@v1
         with:
-          args: -L -o ./content/publications.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.PUBLICATIONS_DRIVE_ID }}"
+          args: https://drive.google.com/uc?export=download&id=${{ secrets.PUBLICATIONS_DRIVE_ID }} -o ./content/publications.yaml
 
       - name: install
         run: npm install
