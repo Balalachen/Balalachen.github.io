@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '14.x'
 
+      - name: download yaml
+        run: wei/curl@v1
+        with:
+          args: -L -o ./content/publications.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.PUBLICATIONS_DRIVE_ID }}"
+
       - name: install
         run: npm install
 
