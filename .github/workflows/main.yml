@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: download yaml
+      - name: download publications yaml
         run: curl -L -o ./content/publications.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.PUBLICATIONS_DRIVE_ID }}"
+        
+      - name: download work-history yaml
+        run: curl -L -o ./content/work-historyMod.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.HISTORY_DRIVE_ID }}"
 
       - name: install
         run: npm install
