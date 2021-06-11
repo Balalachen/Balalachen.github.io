@@ -21,14 +21,14 @@ function HistoryList ({company, url, selection, department, position, fromtime, 
 
     return (
         <div
-            className="inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back mb-2"
+            className="inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back"
             style={{
                 height: !isCollapse || selection ? hsDetails.current?.clientHeight : 0,
                 opacity: !isCollapse || selection ? 100 : 0.3,
             }}
         >
             <div 
-                className="pr-2 pb-2"
+                className="pr-2 pb-2 mt-2"
                 ref={hsDetails}
             >
                 <div className="border-l-4 flex flex-col">

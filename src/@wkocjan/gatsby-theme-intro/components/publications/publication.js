@@ -32,7 +32,7 @@ const Publication = props => {
             }}
         >
         <div 
-            className="border-l-4 pb-4 relative flex flex:row"
+            className="border-l-4 py-4 relative flex flex:row"
             ref={pubDetails}
         >
             <div className="pl-2 w-8 inline-block">
