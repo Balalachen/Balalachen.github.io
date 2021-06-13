@@ -6,7 +6,7 @@ function HistoryNote ({notes}){
         <>
             {notes.map(note => (
                 <li
-                    className="inline-block px-2 mr-2 font-light text-xs border-l-2 border-lead opacity-75"
+                    className="inline-block px-1 mr-2 font-light text-xs border-l-2 border-lead opacity-75"
                     key={note}
                 >
                     {note}
@@ -70,7 +70,7 @@ function HistoryList ({company, url, selection, department, position, fromtime, 
                 </div>
                 
                 {notes && (
-                    <ul className="pr-2 ml-1 mt-1">
+                    <ul className="pr-2 mx-2 mt-1">
                         <HistoryNote notes={notes} />
                     </ul>
                 )}
