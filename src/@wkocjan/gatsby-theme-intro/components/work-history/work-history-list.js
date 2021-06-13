@@ -6,7 +6,7 @@ function HistoryNote ({notes}){
         <>
             {notes.map(note => (
                 <li
-                    className="inline-block px-3 py-1 mr-1 font-medium text-xs rounded-lg border border-lead opacity-75"
+                    className="inline-block px-2 mr-2 font-light text-xs border-l-2 border-lead opacity-75"
                     key={note}
                 >
                     {note}
@@ -17,58 +17,58 @@ function HistoryNote ({notes}){
 }
 
 function HistoryList ({company, url, selection, department, position, fromtime, totime, notes, isCollapse}){
-    const hsDetails = useRef(null)
+    const hsDetails = useRef(null);
+    if( totime === null || totime === "" ){
+        totime = "PRESENT";
+    }
 
     return (
         <div
-            className="inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back"
+            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back "}${(!isCollapse || selection ? "mb-2 " : "")}`}
             style={{
                 height: !isCollapse || selection ? hsDetails.current?.clientHeight : 0,
                 opacity: !isCollapse || selection ? 100 : 0.3,
             }}
         >
             <div 
-                className="pr-2 pb-2 mt-2"
+                className="p-4 border-t-4 border-line bg-back-light"
                 ref={hsDetails}
             >
-                <div className="border-l-4 flex flex-col">
+                <div className="flex flex-col">
                     <div className="flex flex-row">
-                    {url ? (
-                        <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:opacity-75 transition-opacity duration-150 mx-2 font-bold"
-                        >
-                            {company}
-                        </a>
-                    ) : (
-                        <h4 className="pr-2 font-bold text-front mx-2">{company}</h4>
-                    )}
-                    {totime && (
-                        <>
-                        <span className="border-t-2 opacity-50 flex-1 mt-2 h-1 mx-2" />
-                        <span className="text-sm font-normal opacity-50 ml-auto uppercase">
-                            {totime}
-                        </span>
-                        </>
-                    )}
+                        {url ? (
+                            <a
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-75 transition-opacity duration-150 mx-2"
+                            >
+                                {company}
+                            </a>
+                        ) : (
+                            <h4 className="pr-2 text-front mx-2">{company}</h4>
+                        )}
+                        { position && (
+                            <h4 className="text-lead font-normal ml-auto ">{position}</h4>
+                        )}
                     </div>
                     <div className="flex flex-row">
                         {department && (
-                            <h4 className="text-xs font-medium subpixel-antialiased ml-4"> - {department}</h4>
+                            <h4 className="text-xs font-normal mx-2">{department}</h4>
+                        )}
+                        {totime && (
+                            <span className="text-xs font-light opacity-50 ml-auto uppercase">
+                                {totime}
+                            </span>
                         )}
                         {fromtime && (
-                            <span className="text-xs font-normal opacity-50 ml-auto uppercase">
-                                {fromtime}
+                            <span className="text-xs font-light opacity-50 ml-1 uppercase">
+                                - {fromtime}
                             </span>
                         )}
                     </div>
                 </div>
                 
-                {position && (
-                    <h5 className="text-sm font-normal ml-4 mt-1">{position}</h5>
-                )}
                 {notes && (
                     <ul className="pr-2 ml-1 mt-1">
                         <HistoryNote notes={notes} />
