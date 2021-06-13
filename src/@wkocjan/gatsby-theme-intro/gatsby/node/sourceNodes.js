@@ -22,7 +22,6 @@ module.exports = ({ actions }) => {
       position: String
       tags: [String]
       image: File @fileByRelativePath
-      icon: [String]
       url: [String]
       awards: [String]
       exhibitions: [String]

@@ -31,14 +31,14 @@ const Publication = props => {
                 opacity: !isCollapse || selection ? 100 : 0.3,
             }}
         >
-        <div 
-            className="border-l-4 py-4 relative flex flex:row"
-            ref={pubDetails}
-        >
-            <div className="pl-2 w-8 inline-block">
+            <div 
+                className="pb-8 relative flex flex-col"
+                ref={pubDetails}
+            >
+            {/*<div className="pl-2 w-8 inline-block">
                 <h4 className="font-bold text-front"> [{id}] </h4>
-            </div>
-            <div className="pl-2 inline-block flex flex-col">
+            </div>*/}
+            <div className="border-l-4 pl-4 pr-2 ">
                 <h4 className="pr-2 font-bold text-front">{title}</h4>
                 {/*<h4 className="pr-2 text-sm font-normal">{authors}</h4>*/}
                 <h4 className="flex flex-wrap" style={{width: '90%'}}>
@@ -87,7 +87,7 @@ const Publication = props => {
                     </span>
                 </div>
             </div>
-        </div>
+            </div>
         </div>
     )
 }

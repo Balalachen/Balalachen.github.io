@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import { arrayOf, shape, string, object, oneOf, bool } from "prop-types"
+import { arrayOf, shape, string, object, bool } from "prop-types"
 
 export const ProjectModType = {
   description: string,
@@ -11,7 +11,6 @@ export const ProjectModType = {
   status: string,
   position: string,
   tags: arrayOf(string),
-  icon: arrayOf(oneOf(["github", "website", "youtube", "steam"])),
   url: arrayOf(string),
   awards: arrayOf(string),
   exhibitions: arrayOf(string)
@@ -30,7 +29,6 @@ export const query = graphql`
         gatsbyImageData(width: 640, quality: 85)
       }
     }
-    icon
     url
     awards
     exhibitions

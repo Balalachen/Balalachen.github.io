@@ -8,7 +8,7 @@ import ProjectStatus from "./project-status"
 import ProjectTags from "./project-tags"
 
 const Project = props => {
-  const { name, image, url, description, selection, status, position, tags, icon, awards, exhibitions, isCollapse } = props
+  const { name, image, url, description, selection, status, position, tags, awards, exhibitions, isCollapse } = props
   const projDetails = useRef(null)
 
   return (
@@ -75,8 +75,8 @@ const Project = props => {
             {tags && <ProjectTags tags={tags} />}
           </ul>
         )}
-        {icon && icon.map((theIcon, i) => (
-          <ProjectIcon key={`${name}_${"picon"}_${i}`} icon={theIcon} url={url[i]} idx={i} />
+        {url && url.map((theURL, i) => (
+          <ProjectIcon key={`${name}_${"picon"}_${i}`} url={theURL} idx={i} />
         ))}
         
       </div>
