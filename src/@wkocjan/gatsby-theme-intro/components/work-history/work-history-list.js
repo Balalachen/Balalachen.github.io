@@ -79,12 +79,62 @@ function HistoryList ({company, url, selection, department, position, fromtime, 
     )
 }
 
+function TalkList ({company, url, selection, department, position, totime, fromtime, isCollapse}){
+    const thsDetails = useRef(null)
+
+    return (
+        <div
+            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back "}${(!isCollapse || selection ? "mb-2 " : "")}`}
+            style={{
+                height: !isCollapse || selection ? thsDetails.current?.clientHeight : 0,
+                opacity: !isCollapse || selection ? 100 : 0.3,
+            }}
+        >
+            <div 
+                className="border-l-4"
+                ref={thsDetails}
+            >
+                <div className="flex flex-row">
+                    {url ? (
+                        <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-normal hover:opacity-75 transition-opacity duration-150 pl-2 mx-2 text-sm"
+                        >
+                            {company}
+                        </a>
+                    ) : (
+                        <h4 className="pl-2 text-front font-normal mx-2 text-sm">{company}</h4>
+                    )}
+
+                    { department && (
+                        <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2">{department}</h4>
+                    )}
+                    { totime && (
+                        <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2 opacity-50">
+                            {totime + ((fromtime !== "" && fromtime !== null) ? " - "+fromtime : "")}
+                        </h4>
+                    )}
+                </div>
+            </div>
+        </div>
+    )
+}
+
 const WorkHistoryList = ({ historys }) => {
     const [isCollapseWH, setIsCollapseWH] = useState(true)
+    const [isCollapseTalk, setIsCollapseTalk] = useState(true)
+
     let subHistory = [];
+    let talkHistory = [];
+
     for( let i=0 ; i<historys.length ; i++ ){
         if( historys[i].label === "all" || historys[i].label === "list" ){
-        subHistory.push(historys[i]);
+            subHistory.push(historys[i]);
+        }
+        else if( historys[i].label === "short" ){
+            talkHistory.push(historys[i]);
         }
     }
 
@@ -111,7 +161,7 @@ const WorkHistoryList = ({ historys }) => {
             <HistoryList key={`histo_${i}`} {...history} isCollapse={isCollapseWH} />
         ))}
         </div>
-        
+
         <div className="flex flex-row">
             <button 
                 className="font-header font-semibold underline text-front opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
@@ -121,7 +171,44 @@ const WorkHistoryList = ({ historys }) => {
                 onClick={() => setIsCollapseWH(!isCollapseWH)}
             >
             {isCollapseWH ?
-                "... See Complete Publication List ("+historys.length+")" :
+                "... See Complete Experience List ("+subHistory.length+")" :
+                "Fold Some Experience"
+            }
+            </button>
+        </div>
+
+        <div className="flex flex-row mt-4">
+            <h5 className="font-header font-semibold text-front text-sm uppercase mb-3" id="experience">
+                Talk / Workshop
+            </h5>
+            <button 
+                className="font-header ml-2 font-semibold underline text-front opacity-50 text-sm uppercase mb-3 hover:opacity-25 transition-opacity duration-100"
+                style={{
+                    visibility: !isCollapseTalk ? "visible" : "hidden",
+                }}
+                type="button"
+                name="cp_isCollapseTalk1"
+                id="cp_isCollapseTalk1"
+                onClick={() => setIsCollapseTalk(!isCollapseTalk)}
+            >( - Fold)</button>
+        </div>
+
+        <div className="flex flex-col">
+        {talkHistory.map( (talk, i) => (
+            <TalkList key={`tkhisto_${i}`} {...talk} isCollapse={isCollapseTalk} />
+        ))}
+        </div>
+        
+        <div className="flex flex-row">
+            <button 
+                className="font-header font-semibold underline text-front opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
+                type="button"
+                name="cp_isCollapseTalk2"
+                id="cp_isCollapseTalk2"
+                onClick={() => setIsCollapseTalk(!isCollapseTalk)}
+            >
+            {isCollapseTalk ?
+                "... See Complete Talk List ("+talkHistory.length+")" :
                 "Fold Some Experience"
             }
             </button>

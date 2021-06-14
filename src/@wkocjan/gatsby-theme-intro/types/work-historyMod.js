@@ -8,7 +8,7 @@ export const WorkHistoryModType = {
   totime: string,
   position: string,
   url: string,
-  label: oneOf(["summery", "list", "all"]),
+  label: oneOf(["summery", "list", "all", "short"]),
   selection: bool,
   notes: arrayOf(string)
 }
