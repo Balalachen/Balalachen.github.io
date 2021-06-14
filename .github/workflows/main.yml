@@ -17,11 +17,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+      - name: prepare download image folder script
+        run: chmod +x "./ParsingGFolder.sh"
+        
       - name: download image folder
-        run:|
-          chmod +x "${GITHUB_WORKSPACE}/ParsingGFolder.sh"
-          "${GITHUB_WORKSPACE}/ParsingGFolder.sh" ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }}
-          
+        run: ./ParsingGFolder.sh ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }}
+        
       - name: download publications yaml
         run: curl -L -o ./content/publications.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.PUBLICATIONS_DRIVE_ID }}"
         
