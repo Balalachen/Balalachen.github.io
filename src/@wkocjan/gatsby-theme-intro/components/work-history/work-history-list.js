@@ -94,7 +94,7 @@ function TalkList ({company, url, selection, department, position, totime, fromt
                 className="border-l-4"
                 ref={thsDetails}
             >
-                <div className="flex flex-row">
+                <div className="flex flex-col lg:flex-row">
                     {url ? (
                         <a
                             href={url}
@@ -107,15 +107,16 @@ function TalkList ({company, url, selection, department, position, totime, fromt
                     ) : (
                         <h4 className="pl-2 text-front font-normal mx-2 text-sm">{company}</h4>
                     )}
-
+                    <div className="flex flex-row">
                     { department && (
-                        <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2">{department}</h4>
+                        <h4 className="text-xs font-light mx-2 pl-2 py-1 lg:border-l-2">{department}</h4>
                     )}
                     { totime && (
                         <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2 opacity-50">
                             {totime + ((fromtime !== "" && fromtime !== null) ? " - "+fromtime : "")}
                         </h4>
                     )}
+                    </div>
                 </div>
             </div>
         </div>
