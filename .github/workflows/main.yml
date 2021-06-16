@@ -28,6 +28,9 @@ jobs:
         
       - name: download work-history yaml
         run: curl -L -o ./content/work-historyMod.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.HISTORY_DRIVE_ID }}"
+      
+      - name: download projects yaml
+        run: curl -L -o ./content/projectsMod.yaml "https://drive.google.com/uc?export=download&id=${{ secrets.PROJECT_DRIVE_ID }}"
 
       - name: install
         run: npm install
