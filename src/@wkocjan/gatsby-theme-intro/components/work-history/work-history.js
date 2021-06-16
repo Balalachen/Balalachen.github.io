@@ -112,6 +112,7 @@ const WorkHistory = ({ history }) => {
         <span className="absolute border-l-2 h-full w-2" style={{top:0, left:0}} />
         {subHistory.map((hp, i) => (
           <div
+            key={`${"TimelineHS_"}${i}`}
             onMouseEnter={() => setIsHoverID(i)}
             onMouseLeave={() => setIsHoverID(-1)}
           >
