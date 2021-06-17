@@ -1,7 +1,7 @@
 import React from "react"
 import { Switch, Case, Default } from 'react-if';
-import { FaCompass, FaGithub, FaYoutube, FaSteam } from "react-icons/fa"
-import { SiOculus } from "react-icons/si"
+import { FaCompass, FaGithub, FaYoutube, FaSteam, FaFacebook } from "react-icons/fa"
+import { SiOculus, SiVivaldi, SiValve } from "react-icons/si"
 import { string, ProjectModType } from "../../types"
 
 const ProjectIcon = ({ url, idx }) => (  
@@ -21,11 +21,17 @@ const ProjectIcon = ({ url, idx }) => (
         <Case condition={url.includes(".youtube") || url.includes("youtu.be")}>
           <FaYoutube className="w-6 h-6" />
         </Case>
+        <Case condition={url.includes(".facebook")}>
+          <FaFacebook className="w-6 h-6" />
+        </Case>
         <Case condition={url.includes("store.steam")}>
           <FaSteam className="w-6 h-6" />
         </Case>
-        <Case condition={url.includes("store.steam")}>
+        <Case condition={url.includes(".oculus")}>
           <SiOculus className="w-6 h-6" />
+        </Case>
+        <Case condition={url.includes(".viveport")}>
+          <SiVivaldi className="w-6 h-6" />
         </Case>
         <Default>
           <FaCompass className="w-6 h-6" />
