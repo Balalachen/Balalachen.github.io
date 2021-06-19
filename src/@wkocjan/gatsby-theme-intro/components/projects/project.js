@@ -25,14 +25,14 @@ const Project = props => {
 
   return (
     <div
-      className={`${"overflow-hidden transition-all duration-150 ease-linear "}${(!isCollapse || selection ? "mb-3 " : "")}`}
+      className={`${"overflow-hidden dark:text-front-dark transition-all duration-150 ease-linear "}${(!isCollapse || selection ? "mb-3 " : "")}`}
       style={{
         height: !isCollapse || selection ? projDetails.current?.clientHeight : 0,
         opacity: !isCollapse || selection ? 100 : 0.3,
       }}
     >
     <div 
-      className="border-t-4 border-line relative flex flex-wrap bg-back-light p-4 lg:p-8 bg-no-repeat text-sm"
+      className="border-t-4 border-line dark:border-line-dark relative flex flex-wrap bg-back-light dark:bg-back-light-dark p-4 lg:p-8 bg-no-repeat text-sm"
       ref={projDetails}
     >
       {image && (

@@ -6,7 +6,7 @@ import { string, ProjectModType } from "../../types"
 
 const ProjectIcon = ({ url, idx }) => (  
   <span 
-    className={"absolute right-0 top-0 mt-5 text-lead hover:opacity-50 transition-opacity duration-100"}
+    className={"absolute right-0 top-0 mt-5 text-lead dark:text-lead-dark hover:opacity-50 transition-all duration-100"}
     style={{marginRight: 1.5 + idx * 2.5 + 'em'}}
   >
     <a 

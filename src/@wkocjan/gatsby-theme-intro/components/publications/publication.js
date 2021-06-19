@@ -25,7 +25,7 @@ const Publication = props => {
     const pubDetails = useRef(null)
     return (
         <div
-            className="overflow-hidden transition-all duration-150 ease-linear"
+            className="overflow-hidden dark:text-front-dark transition-all duration-150 ease-linear"
             style={{
                 height: !isCollapse || selection ? pubDetails.current?.clientHeight : 0,
                 opacity: !isCollapse || selection ? 100 : 0.3,
@@ -38,16 +38,16 @@ const Publication = props => {
             {/*<div className="pl-2 w-8 inline-block">
                 <h4 className="font-bold text-front"> [{id}] </h4>
             </div>*/}
-            <div className="border-l-4 pl-4 pr-2 ">
-                <h4 className="pr-2 font-bold text-front">{title}</h4>
+            <div className="border-l-4 pl-4 pr-2 border-line dark:border-line-dark">
+                <h4 className="pr-2 font-bold">{title}</h4>
                 {/*<h4 className="pr-2 text-sm font-normal">{authors}</h4>*/}
                 <h4 className="flex flex-wrap" style={{width: '90%'}}>
                     <AuthorSolver authors={authors} fullname={fullname} />
                 </h4>
                 {award && (
-                    <div className="inline-block flex flex-row font-medium">
-                        <GiLaurelsTrophy className="bg-lead text-lead-text w-6 h-6 p-1" />
-                        <span className="bg-lead text-lead-text pl-2 pr-2">{award}</span>
+                    <div className="inline-block flex flex-row font-medium text-lead-text dark:text-lead-text-dark transition-colors duration-500">
+                        <GiLaurelsTrophy className="bg-lead dark:bg-lead-dark w-6 h-6 p-1" />
+                        <span className="bg-lead dark:bg-lead-dark pl-2 pr-2">{award}</span>
                     </div>
                 )}
                 {/*<p className="pr-2 text-sm font-light italic">{proceedings}</p>*/}

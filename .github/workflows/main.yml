@@ -29,6 +29,9 @@ jobs:
       - name: install
         run: npm install
 
+      - name: Overwrite tailwind config
+        run: cp ./tailwind.config.js ./node_modules/@wkocjan/gatsby-theme-intro/tailwind.config.js
+
       - name: build
         run: npm run build
 

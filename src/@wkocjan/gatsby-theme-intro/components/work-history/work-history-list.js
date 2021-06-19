@@ -6,7 +6,7 @@ function HistoryNote ({notes}){
         <>
             {notes.map(note => (
                 <li
-                    className="inline-block px-1 mr-2 font-light text-xs border-l-2 border-lead opacity-75"
+                    className="inline-block px-1 mr-2 font-light text-xs border-l-2 border-lead dark:border-lead-dark opacity-75"
                     key={note}
                 >
                     {note}
@@ -24,14 +24,14 @@ function HistoryList ({company, url, selection, department, position, fromtime, 
 
     return (
         <div
-            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back "}${(!isCollapse || selection ? "mb-2 " : "")}`}
+            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear text-front dark:text-front-dark "}${(!isCollapse || selection ? "mb-2 " : "")}`}
             style={{
                 height: !isCollapse || selection ? hsDetails.current?.clientHeight : 0,
                 opacity: !isCollapse || selection ? 100 : 0.3,
             }}
         >
             <div 
-                className="p-4 border-t-4 border-line bg-back-light"
+                className="p-4 border-t-4 border-line bg-back-light dark:border-line-dark dark:bg-back-light-dark transition-colors duration-500"
                 ref={hsDetails}
             >
                 <div className="flex flex-col">
@@ -46,10 +46,10 @@ function HistoryList ({company, url, selection, department, position, fromtime, 
                                 {company}
                             </a>
                         ) : (
-                            <h4 className="pr-2 text-front mx-2">{company}</h4>
+                            <h4 className="pr-2 mx-2">{company}</h4>
                         )}
                         { position && (
-                            <h4 className="text-lead font-normal ml-auto ">{position}</h4>
+                            <h4 className="text-lead dark:text-lead-dark font-normal ml-auto ">{position}</h4>
                         )}
                     </div>
                     <div className="flex flex-row">
@@ -84,14 +84,14 @@ function TalkList ({company, url, selection, department, position, totime, fromt
 
     return (
         <div
-            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear bg-back "}${(!isCollapse || selection ? "mb-2 " : "")}`}
+            className={`${"inline-box flex flex-col overflow-hidden transition-all duration-150 ease-linear text-front dark:text-front-dark "}${(!isCollapse || selection ? "mb-2 " : "")}`}
             style={{
                 height: !isCollapse || selection ? thsDetails.current?.clientHeight : 0,
                 opacity: !isCollapse || selection ? 100 : 0.3,
             }}
         >
             <div 
-                className="border-l-4"
+                className="border-l-4 border-line dark:border-line-dark"
                 ref={thsDetails}
             >
                 <div className="flex flex-col lg:flex-row">
@@ -105,14 +105,14 @@ function TalkList ({company, url, selection, department, position, totime, fromt
                             {company}
                         </a>
                     ) : (
-                        <h4 className="pl-2 text-front font-normal mx-2 text-sm">{company}</h4>
+                        <h4 className="pl-2 font-normal mx-2 text-sm">{company}</h4>
                     )}
                     <div className="flex flex-row">
                     { department && (
-                        <h4 className="text-xs font-light mx-2 pl-2 py-1 lg:border-l-2">{department}</h4>
+                        <h4 className="text-xs font-light mx-2 pl-2 py-1 lg:border-l-2 border-line dark:border-line-dark">{department}</h4>
                     )}
                     { totime && (
-                        <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2 opacity-50">
+                        <h4 className="text-xs font-light mx-2 pl-2 py-1 border-l-2 opacity-50 border-line dark:border-line-dark">
                             {totime + ((fromtime !== "" && fromtime !== null) ? " - "+fromtime : "")}
                         </h4>
                     )}
@@ -141,12 +141,12 @@ const WorkHistoryList = ({ historys }) => {
 
     return (
     <>
-        <div className="flex flex-row">
-            <h5 className="font-header font-semibold text-front text-sm uppercase mb-3" id="experience">
+        <div className="flex flex-row text-front dark:text-front-dark transition-colors duration-500">
+            <h5 className="font-header font-semibold text-sm uppercase mb-3" id="experience">
                 Experience
             </h5>
             <button 
-                className="font-header ml-2 font-semibold underline text-front opacity-50 text-sm uppercase mb-3 hover:opacity-25 transition-opacity duration-100"
+                className="font-header ml-2 font-semibold underline opacity-50 text-sm uppercase mb-3 hover:opacity-25 transition-opacity duration-100"
                 style={{
                     visibility: !isCollapseWH ? "visible" : "hidden",
                 }}
@@ -163,9 +163,9 @@ const WorkHistoryList = ({ historys }) => {
         ))}
         </div>
 
-        <div className="flex flex-row">
+        <div className="flex flex-row text-front dark:text-front-dark transition-colors duration-500">
             <button 
-                className="font-header font-semibold underline text-front opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
+                className="font-header font-semibold underline opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
                 type="button"
                 name="cp_isCollapseWH2"
                 id="cp_isCollapseWH2"
@@ -178,12 +178,12 @@ const WorkHistoryList = ({ historys }) => {
             </button>
         </div>
 
-        <div className="flex flex-row mt-4">
-            <h5 className="font-header font-semibold text-front text-sm uppercase mb-3" id="experience">
+        <div className="flex flex-row mt-4 text-front dark:text-front-dark transition-colors duration-500">
+            <h5 className="font-header font-semibold text-sm uppercase mb-3" id="experience">
                 Talk / Workshop
             </h5>
             <button 
-                className="font-header ml-2 font-semibold underline text-front opacity-50 text-sm uppercase mb-3 hover:opacity-25 transition-opacity duration-100"
+                className="font-header ml-2 font-semibold underline opacity-50 text-sm uppercase mb-3 hover:opacity-25 transition-opacity duration-100"
                 style={{
                     visibility: !isCollapseTalk ? "visible" : "hidden",
                 }}
@@ -200,9 +200,9 @@ const WorkHistoryList = ({ historys }) => {
         ))}
         </div>
         
-        <div className="flex flex-row">
+        <div className="flex flex-row text-front dark:text-front-dark transition-colors duration-500">
             <button 
-                className="font-header font-semibold underline text-front opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
+                className="font-header font-semibold underline opacity-50 text-sm uppercase mb-3 ml-auto hover:opacity-25 transition-opacity duration-100"
                 type="button"
                 name="cp_isCollapseTalk2"
                 id="cp_isCollapseTalk2"

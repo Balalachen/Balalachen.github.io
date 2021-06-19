@@ -1,9 +1,9 @@
 .form-control {
-  @apply w-full text-front px-4 py-3 font-header font-semibold text-sm outline-none leading-normal;
+  @apply w-full text-front dark:text-front-dark px-4 py-3 font-header font-semibold text-sm outline-none leading-normal;
 }
 
 .form-input {
-  @apply form-control bg-back-light transition-opacity duration-150;
+  @apply form-control bg-back-light dark:bg-back-light-dark transition-opacity duration-150;
 }
 
 .form-input:focus {
@@ -19,12 +19,12 @@
 }
 
 .input-range::range-track {
-  @apply appearance-none w-full bg-back cursor-pointer outline-none;
+  @apply appearance-none w-full bg-back dark:bg-back-dark cursor-pointer outline-none;
   height: 2px;
 }
 
 .input-range::range-thumb {
-  @apply appearance-none rounded-full w-4 h-4 bg-lead cursor-pointer outline-none;
+  @apply appearance-none rounded-full w-4 h-4 bg-lead dark:bg-lead-dark cursor-pointer outline-none;
   /* autoprefixer: ignore next */
   -webkit-transform: translateY(-6.5px);
   -moz-transform: translateY(0);

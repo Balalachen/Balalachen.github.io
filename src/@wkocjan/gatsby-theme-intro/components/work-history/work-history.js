@@ -8,7 +8,7 @@ function HistoryPoint({idx, ml, company, department, fromtime, totime, position,
 
   return (
     <div 
-      className="relative py-4"
+      className="relative py-4 text-front dark:text-front-dark transition-colors duration-500"
       style={{
         paddingLeft: (ml + 1.25) + 'em'
       }}
@@ -18,7 +18,7 @@ function HistoryPoint({idx, ml, company, department, fromtime, totime, position,
       </span>
       */}
       <span 
-        className={`${"dot-shift rounded-full absolute inline-flex items-center justify-center w-2 h-2 bg-lead mt-6 opacity-"}${alpha}`}
+        className={`${"dot-shift rounded-full absolute inline-flex items-center justify-center w-2 h-2 bg-lead dark:bg-lead-dark mt-6 opacity-"}${alpha}`}
         style={{
           left: ml+'em'
         }}
@@ -83,7 +83,7 @@ function TimeBorderLine ({idx, ml, fromtime, totime, isHover}) {
 
   return (
     <span 
-      className={`${"absolute border-l-2 transition-all duration-100 "}${isHover ? "border-front" : "border-lead"}`}
+      className={`${"absolute border-l-2 transition-all duration-100 "}${isHover ? "border-front dark:border-front-dark" : "border-lead dark:border-lead-dark"}`}
       style={{
         top: cssTop+'%',
         left: (ml + 0.2)+'em',
@@ -105,11 +105,11 @@ const WorkHistory = ({ history }) => {
 
   return (
     <>
-      <h5 className="font-header font-semibold text-front text-sm uppercase mt-7 mb-3 text-left hidden lg:block">
+      <h5 className="font-header font-semibold text-front dark:text-front-dark text-sm uppercase mt-7 mb-3 text-left hidden lg:block transition-colors duration-500">
         Work history
       </h5>
       <div className="flex flex-col relative pt-6 pb-6 ml-0">
-        <span className="absolute border-l-2 h-full w-2" style={{top:0, left:0}} />
+        <span className="absolute border-l-2 h-full w-2 border-line dark:border-line-dark" style={{top:0, left:0}} />
         {subHistory.map((hp, i) => (
           <div
             key={`${"TimelineHS_"}${i}`}
@@ -117,7 +117,7 @@ const WorkHistory = ({ history }) => {
             onMouseLeave={() => setIsHoverID(-1)}
           >
             <span 
-              className="absolute border-l-2 h-full w-2 opacity-50" 
+              className="absolute border-l-2 h-full w-2 opacity-50 border-line dark:border-line-dark" 
               style={{
                 top:0, 
                 left: ((subHistory.length - 1 - i)*0.5 + 0.25 + 0.2) +'em',
