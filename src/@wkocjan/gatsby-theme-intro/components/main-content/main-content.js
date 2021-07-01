@@ -14,15 +14,16 @@ const MainContent = ({ formspreeEndpoint, history, projects, profile, publicatio
       <Summary profile={profile} />
 
       <div className="flex flex-wrap">
-        <div className="md:w-3/4 pb-12 md:pr-8 lg:pr-12 xl:pr-20">
-          {profile.skills && <Skills skills={profile.skills} />}
+        <div className="md:w-3/4 pb-4 md:pr-8 lg:pr-12 xl:pr-20">
+          {/*profile.skills && <Skills skills={profile.skills} />*/}
+          {profile.about && <About about={profile.about} />}
         </div>
-        <div className="md:w-1/4 pb-12">
-          {profile.tools && <Tools tools={profile.tools} />}
+        <div className="md:w-1/4 pb-4">
+          {/*profile.tools && <Tools tools={profile.tools} />*/}
         </div>
       </div>
 
-      {profile.about && <About about={profile.about} />}
+      {/*profile.about && <About about={profile.about} />*/}
       <Projects projects={projects} />
       <Publications 
         publications={publications}

@@ -1,9 +1,22 @@
 import React, {useState} from "react"
 import Project from "./project"
 import { arrayOf, shape, ProjectModType } from "../../types"
+import { Masonry } from 'masonic'
+
 
 const Projects = ({ projects }) => {
   const [isCollapse, setIsCollapse] = useState(true)
+  
+  let subProjects = [];
+  for( let i=0 ; i<projects.length ; i++ ){
+    if( !isCollapse || projects[i].selection ){
+      subProjects.push(projects[i]);
+    }
+  }
+
+  const MasonryCard = ({index, data, width}) => (
+    <Project key={`${"proj"}_${data.name}`} {...data} isCollapse={isCollapse} />
+  )
 
   return (
     <>
@@ -22,10 +35,20 @@ const Projects = ({ projects }) => {
           onClick={() => setIsCollapse(!isCollapse)}
         >( - Fold)</button>
       </div>
+
+      <Masonry 
+        key={ isCollapse ? 'Selections' : 'FullProjects' }
+        items={subProjects} 
+        columnWidth={300}
+        render={MasonryCard} 
+      />
       
+      {/*
+      <div className="grid grid-cols-2 gap-5">
       {projects.map((project, i) => (
         <Project key={`${"proj"}_${i}`} {...project} isCollapse={isCollapse} />
       ))}
+      </div>*/}
 
       <div className="flex flex-row text-front dark:text-front-dark transition-colors duration-500">
         <button 
