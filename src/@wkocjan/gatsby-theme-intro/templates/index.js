@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
   return (
     <div className="antialiased bg-back dark:bg-back-dark leading-normal font-text text-front transition-colors duration-500">
       <SEO />
-      <StructuredData profile={profile} social={social.nodes} />
+        <StructuredData profile={profile} social={social.nodes} />
       <CustomFonts />
 
       <Header initials={profile.initials} />
