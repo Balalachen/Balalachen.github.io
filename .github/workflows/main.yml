@@ -21,10 +21,10 @@ jobs:
         run: chmod +x "./ParsingGFolderAutho.sh"
         
       - name: download image folder
-        run: ./ParsingGFolderAutho.sh ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }} Image ${{ secrets.OAUTH_AC_TOKEN }}
+        run: ./ParsingGFolderAutho.sh ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }} Image ${{ secrets.CLIENT_ID }} ${{ secrets.CLIENT_SECRET }} ${{ secrets.REFRESH_TOKEN }}
         
       - name: download text folder
-        run: ./ParsingGFolderAutho.sh ${{ secrets.TEXT_GFOLDER_ID }} ${{ secrets.TEXT_LOCAL_PATH }} Text ${{ secrets.OAUTH_AC_TOKEN }}
+        run: ./ParsingGFolderAutho.sh ${{ secrets.TEXT_GFOLDER_ID }} ${{ secrets.TEXT_LOCAL_PATH }} Text ${{ secrets.CLIENT_ID }} ${{ secrets.CLIENT_SECRET }} ${{ secrets.REFRESH_TOKEN }}
 
       - name: install
         run: npm install
