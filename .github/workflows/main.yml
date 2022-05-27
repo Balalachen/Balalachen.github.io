@@ -18,13 +18,13 @@ jobs:
         with:
           node-version: '14.x'
       - name: prepare download image folder script
-        run: chmod +x "./ParsingGFolderAutho.sh"
+        run: chmod +x "./ParsingGFolderKey.sh"
         
       - name: download image folder
-        run: ./ParsingGFolderAutho.sh ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }} Image ${{ secrets.CLIENT_ID }} ${{ secrets.CLIENT_SECRET }} ${{ secrets.REFRESH_TOKEN }}
+        run: ./ParsingGFolderKey.sh ${{ secrets.IMAGE_GFOLDER_ID }} ${{ secrets.IMAGE_LOCAL_PATH }} Image ${{ secrets.G_API_KEY }}
         
       - name: download text folder
-        run: ./ParsingGFolderAutho.sh ${{ secrets.TEXT_GFOLDER_ID }} ${{ secrets.TEXT_LOCAL_PATH }} Text ${{ secrets.CLIENT_ID }} ${{ secrets.CLIENT_SECRET }} ${{ secrets.REFRESH_TOKEN }}
+        run: ./ParsingGFolderKey.sh ${{ secrets.TEXT_GFOLDER_ID }} ${{ secrets.TEXT_LOCAL_PATH }} Text ${{ secrets.G_API_KEY }}
 
       - name: install
         run: npm install
