@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-firebase-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "import": "node import-to-firebase.mjs",
+    "sync": "node sync-from-firebase.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}

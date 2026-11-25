@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 僅允許通過 Google 登入、信箱已驗證、且為管理員本人信箱的帳號讀寫
+    // 請將下方信箱替換為你自己的 Google 帳號 Email
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == "YOUR_EMAIL@gmail.com";
+    }
+
+    // 所有集合皆僅限管理員前端讀寫；
+    // GitHub Actions 建置靜態網站時使用 Service Account (Admin SDK)，會自動繞過此規則。
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

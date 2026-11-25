@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // 僅允許通過 Google 登入、信箱已驗證、且為管理員本人信箱的帳號讀寫
+    // 請將下方信箱替換為你自己的 Google 帳號 Email
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == "YOUR_EMAIL@gmail.com";
+    }
+
+    // 限制圖片僅存放於 images/ 目錄、單檔小於 15 MB 且必須為圖片 MIME 類型
+    match /images/{fileName} {
+      allow read, delete: if isAdmin();
+      allow write: if isAdmin()
+        && request.resource != null
+        && request.resource.size < 15 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    // 其餘路徑一律禁止前端存取
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
