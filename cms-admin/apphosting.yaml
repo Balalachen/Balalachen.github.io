@@ -8,34 +8,25 @@ runConfig:
   cpu: 1
   memoryMiB: 512
 
-# Option A: Set VITE_FIREBASE_* variables directly in Firebase Console -> App Hosting -> Environment.
-# Option B: Uncomment below and fill in your Firebase Web App config (these are public client identifiers).
+# 環境變數建議直接於 Firebase Console -> App Hosting -> Settings -> Environment 設定：
+#
+# [1] 前端公開設定（BUILD 階段會編譯進前端 JS）
+#   - VITE_FIREBASE_API_KEY
+#   - VITE_FIREBASE_AUTH_DOMAIN
+#   - VITE_FIREBASE_PROJECT_ID
+#   - VITE_FIREBASE_STORAGE_BUCKET
+#   - VITE_FIREBASE_MESSAGING_SENDER_ID
+#   - VITE_FIREBASE_APP_ID
+#   - VITE_FIRESTORE_DATABASE_ID=portfolio
+#   - VITE_ALLOWED_EMAIL=你的@gmail.com
+#
+# [2] 後端伺服器專用密鑰（切勿加上 VITE_ 前綴！僅供 server.mjs 讀取，絕不會外洩到瀏覽器）
+#   - GITHUB_DEPLOY_PAT  （請使用 Firebase App Hosting Secret / Cloud Secret Manager）
+#   - ALLOWED_EMAIL      （選填；未設時 server.mjs 會自動沿用 VITE_ALLOWED_EMAIL）
+#
+# 若改用 apphosting.yaml 綁定 Cloud Secret Manager，可取消以下註解：
 # env:
-#   - variable: VITE_FIREBASE_API_KEY
-#     value: ""
+#   - variable: GITHUB_DEPLOY_PAT
+#     secret: GITHUB_DEPLOY_PAT
 #     availability:
-#       - BUILD
-#   - variable: VITE_FIREBASE_AUTH_DOMAIN
-#     value: ""
-#     availability:
-#       - BUILD
-#   - variable: VITE_FIREBASE_PROJECT_ID
-#     value: ""
-#     availability:
-#       - BUILD
-#   - variable: VITE_FIREBASE_STORAGE_BUCKET
-#     value: ""
-#     availability:
-#       - BUILD
-#   - variable: VITE_FIREBASE_MESSAGING_SENDER_ID
-#     value: ""
-#     availability:
-#       - BUILD
-#   - variable: VITE_FIREBASE_APP_ID
-#     value: ""
-#     availability:
-#       - BUILD
-#   - variable: VITE_ALLOWED_EMAIL
-#     value: ""
-#     availability:
-#       - BUILD
+#       - RUNTIME
